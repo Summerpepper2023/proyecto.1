@@ -41,9 +41,11 @@ const getBlogContent = async () => {
       </div>
       `;
     })
-  } catch (err) {
+} catch (err) {
     console.log(err);
   }
 }
 
-getBlogContent();
+const loadAdds = () => {
+  console.log('Adds loaded');
+}
