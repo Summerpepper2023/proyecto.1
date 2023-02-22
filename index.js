@@ -16,12 +16,9 @@ const getPosts = async (user) => {
 
 const getCommentsForEachPost = async (posts) => {
   const res = await Promise.all(posts.map(post => 
-<<<<<<< HEAD
-    fetch(`${url}/comments?postId=${post.id}&_limit=4`)  
-=======
     fetch(`${url}/comments?postId=${post.id}&_limit=3`)  
->>>>>>> ed38881ec09c65c005e2d39ea7ef6edc21889d20
-  ))
+  ));
+  console.log(res);
   const postComments = await Promise.all(res.map(r => r.json()));
   
   postComments.forEach((comments, i) => posts[i].comments = comments);
@@ -53,3 +50,5 @@ const getBlogContent = async () => {
 const loadAdds = () => {
   console.log('Adds loaded');
 }
+
+// Commit  test
